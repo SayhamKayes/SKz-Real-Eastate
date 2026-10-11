@@ -11,21 +11,21 @@ export default function Footer() {
     e.preventDefault();
     if (!newsEmail) return;
     setSubscribed(true);
-    showToast('You are now subscribed to Navana Real Estate’s private architectural releases.');
+    showToast('You are now subscribed to SKz Real Estate’s private architectural releases.');
     setNewsEmail('');
   };
 
   return (
     <footer className="bg-white border-t border-stone-200 text-stone-700">
       <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20">
-        
+
         {/* Top Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-16 border-b border-stone-100">
-          
+
           {/* Brand & Mission Column */}
           <div className="lg:col-span-4 space-y-5">
             <div className="font-serif text-2xl font-bold tracking-wider text-stone-900">
-              NAVANA <span className="font-light tracking-widest text-[#B48C57]">REAL ESTATE</span>
+              SKz <span className="font-light tracking-widest text-[#B48C57]">REAL ESTATE</span>
             </div>
             <p className="text-xs md:text-sm text-stone-600 leading-relaxed max-w-sm">
               Setting the pinnacle of luxury residential condominiums and commercial landmarks across Bangladesh for over 28 continuous years.
@@ -43,8 +43,8 @@ export default function Footer() {
             </div>
             <ul className="space-y-2 text-xs md:text-sm text-stone-600">
               <li>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={() => navigateTo('projects', 'projects-grid')}
                   className="hover:text-[#B48C57] transition-colors cursor-pointer text-left"
                 >
@@ -52,8 +52,8 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={() => navigateTo('projects', 'projects-grid')}
                   className="hover:text-[#B48C57] transition-colors cursor-pointer text-left"
                 >
@@ -61,8 +61,8 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={() => navigateTo('projects', 'projects-grid')}
                   className="hover:text-[#B48C57] transition-colors cursor-pointer text-left"
                 >
@@ -70,8 +70,8 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={() => navigateTo('projects', 'projects-grid')}
                   className="hover:text-[#B48C57] transition-colors cursor-pointer text-left"
                 >
@@ -79,8 +79,8 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={() => navigateTo('projects', 'projects-grid')}
                   className="hover:text-[#B48C57] transition-colors cursor-pointer text-left"
                 >
@@ -155,14 +155,10 @@ export default function Footer() {
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <div>
-            © {new Date().getFullYear()} {companyInfo.name}. All rights reserved.
+            © {new Date().getFullYear()} <span className="font-bold text-[#B48C57]">{companyInfo.name}</span> All rights reserved.
           </div>
           <div className="flex items-center gap-6">
-            <span>Privacy Policy</span>
-            <span>·</span>
-            <span>Terms of Service</span>
-            <span>·</span>
-            <span>RERA Compliance Statement</span>
+            <span>Design & Developed by <a href="https://www.theskzlab.com" target="_blank" rel="noopener noreferrer"><span className="font-bold text-[#B48C57]">SKzLAB</span></a></span>
           </div>
         </div>
 
