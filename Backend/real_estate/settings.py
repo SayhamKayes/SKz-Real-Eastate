@@ -6,7 +6,7 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'real_estate_secret_key_navana_production_2026')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'real_estate_secret_key_skz_production_2026')
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 

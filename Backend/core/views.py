@@ -4,6 +4,6 @@ from .models import SiteSetting
 def health_check(request):
     return JsonResponse({
         "status": "online",
-        "service": "Navana Real Estate Core API",
+        "service": "SKz Real Estate Core API",
         "version": "1.0.0"
     })

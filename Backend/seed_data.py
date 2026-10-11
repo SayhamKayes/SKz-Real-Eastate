@@ -8,8 +8,8 @@ from api.models import Project
 
 projects_to_seed = [
     {
-        "title": "Navana Platinum Square",
-        "slug": "navana-platinum-square",
+        "title": "SKz Platinum Square",
+        "slug": "skz-platinum-square",
         "category": "residential",
         "status": "ongoing",
         "location": "Gulshan 2, Dhaka",
@@ -26,8 +26,8 @@ projects_to_seed = [
         "featured": True
     },
     {
-        "title": "Navana Pristine Pavilion",
-        "slug": "navana-pristine-pavilion",
+        "title": "SKz Pristine Pavilion",
+        "slug": "skz-pristine-pavilion",
         "category": "commercial",
         "status": "completed",
         "location": "Gulshan 1, Dhaka",
@@ -44,8 +44,8 @@ projects_to_seed = [
         "featured": True
     },
     {
-        "title": "Navana Grand Veranda",
-        "slug": "navana-grand-veranda",
+        "title": "SKz Grand Veranda",
+        "slug": "skz-grand-veranda",
         "category": "residential",
         "status": "ongoing",
         "location": "Banani, Dhaka",
@@ -62,8 +62,8 @@ projects_to_seed = [
         "featured": True
     },
     {
-        "title": "Navana Silicon Oasis",
-        "slug": "navana-silicon-oasis",
+        "title": "SKz Silicon Oasis",
+        "slug": "skz-silicon-oasis",
         "category": "mixed_use",
         "status": "upcoming",
         "location": "Tejgaon Commercial Area, Dhaka",

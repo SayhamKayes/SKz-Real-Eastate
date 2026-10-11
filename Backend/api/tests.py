@@ -4,8 +4,8 @@ from .models import Project
 class ProjectModelTest(TestCase):
     def setUp(self):
         self.project = Project.objects.create(
-            title="Navana Platinum Tower",
-            slug="navana-platinum-tower",
+            title="SKz Platinum Tower",
+            slug="skz-platinum-tower",
             category="residential",
             status="ongoing",
             location="Gulshan 2, Dhaka",
@@ -16,4 +16,4 @@ class ProjectModelTest(TestCase):
         )
 
     def test_project_creation(self):
-        self.assertEqual(str(self.project), "Navana Platinum Tower (Gulshan 2, Dhaka)")
+        self.assertEqual(str(self.project), "SKz Platinum Tower (Gulshan 2, Dhaka)")

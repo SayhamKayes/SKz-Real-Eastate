@@ -10,5 +10,5 @@ class CurrentUserView(generics.RetrieveAPIView):
         # Demo guest user if not authenticated
         if self.request.user.is_authenticated:
             return self.request.user
-        user, _ = User.objects.get_or_create(username='guest_investor', email='investor@navanarealestate.com')
+        user, _ = User.objects.get_or_create(username='guest_investor', email='investor@skzrealestate.com')
         return user
