@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from '../components/Hero/HeroSection.jsx';
+import InteriorShowcase from '../components/Interior/InteriorShowcase.jsx';
 import LatestLaunchesSlider from '../components/Projects/LatestLaunchesSlider.jsx';
 import AboutHeritage from '../components/About/AboutHeritage.jsx';
 import ArchitecturePillars from '../components/About/ArchitecturePillars.jsx';
@@ -16,14 +17,17 @@ export default function HomePage() {
       {/* 1. Hero Section with Scroll Motion Blueprint Transformation */}
       <HeroSection />
 
-      {/* 2. Latest Launches Carousel Slider (Matching navanarealestate.com) */}
+      {/* 2. Interior Showcase Video Experience with Scroll Motion */}
+      <InteriorShowcase />
+
+      {/* 3. Latest Launches Carousel Slider (Matching navanarealestate.com) */}
       <LatestLaunchesSlider />
 
       {/* 3. The Navana Heritage & Pedigree */}
-      <AboutHeritage />
+      {/* <AboutHeritage /> */}
 
       {/* 4. Engineering Pillars & Seismic Standards */}
-      <ArchitecturePillars />
+      {/* <ArchitecturePillars /> */}
 
       {/* 5. Interactive CAD Floorplan Explorer */}
       <VirtualFloorPlan />
