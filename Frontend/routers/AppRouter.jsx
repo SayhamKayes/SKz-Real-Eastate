@@ -9,6 +9,7 @@ export default function AppRouter() {
   const { currentRoute } = useRealEstate();
 
   switch (currentRoute) {
+    case 'portfolio':
     case 'projects':
       return <ProjectsPage />;
     case 'about':
