@@ -65,7 +65,7 @@ export const apiService = {
     }
 
     // Store in localStorage for persistence
-    const existing = JSON.parse(localStorage.getItem('navana_inquiries') || '[]');
+    const existing = JSON.parse(localStorage.getItem('skz_inquiries') || '[]');
     const newRecord = {
       id: Date.now(),
       ...inquiryData,
@@ -73,7 +73,7 @@ export const apiService = {
       created_at: new Date().toISOString(),
     };
     existing.push(newRecord);
-    localStorage.setItem('navana_inquiries', JSON.stringify(existing));
+    localStorage.setItem('skz_inquiries', JSON.stringify(existing));
     return newRecord;
   },
 
@@ -126,14 +126,14 @@ export const apiService = {
       // Fallback
     }
 
-    const existing = JSON.parse(localStorage.getItem('navana_land_proposals') || '[]');
+    const existing = JSON.parse(localStorage.getItem('skz_land_proposals') || '[]');
     const newRecord = {
       id: Date.now(),
       ...proposalData,
       created_at: new Date().toISOString(),
     };
     existing.push(newRecord);
-    localStorage.setItem('navana_land_proposals', JSON.stringify(existing));
+    localStorage.setItem('skz_land_proposals', JSON.stringify(existing));
     return newRecord;
   },
 };
