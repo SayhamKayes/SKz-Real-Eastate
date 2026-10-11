@@ -20,10 +20,10 @@ export default function HomePage() {
       {/* 2. Interior Showcase Video Experience with Scroll Motion */}
       <InteriorShowcase />
 
-      {/* 3. Latest Launches Carousel Slider (Matching navanarealestate.com) */}
+      {/* 3. Latest Launches Carousel Slider */}
       <LatestLaunchesSlider />
 
-      {/* 3. The Navana Heritage & Pedigree */}
+      {/* 3. The SKz Heritage & Pedigree */}
       {/* <AboutHeritage /> */}
 
       {/* 4. Engineering Pillars & Seismic Standards */}

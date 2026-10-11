@@ -101,7 +101,7 @@ export default function ContactPage() {
             <div className="text-xs font-semibold text-[#B48C57] uppercase tracking-wider">
               Chattogram Regional Office
             </div>
-            <div className="text-sm font-bold text-stone-900">Navana Pine Wood</div>
+            <div className="text-sm font-bold text-stone-900">SKz Pine Wood</div>
             <div className="text-xs text-stone-600">{companyInfo.chittagongOffice}</div>
           </div>
         </div>
