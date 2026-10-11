@@ -13,15 +13,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const isDarkHero = currentRoute === 'home' && scrollY < (typeof window !== 'undefined' ? window.innerHeight * 2.1 : 1600);
-  const isCompact = scrollY > 40;
+  // On home page, header is hidden at the start during the blueprint animation,
+  // and smoothly floats down exactly when the hero video motion completes and the text floats in (~0.70 * window.innerHeight)
+  const isHeaderHidden = currentRoute === 'home' && scrollY < (typeof window !== 'undefined' ? window.innerHeight * 0.70 : 550);
+
+  // Dark navbar styling during HeroSection and InteriorShowcase (both are black backgrounds, total 5.0 * window.innerHeight)
+  const isDarkHero = currentRoute === 'home' && scrollY < (typeof window !== 'undefined' ? window.innerHeight * 4.9 : 3900);
+  const isCompact = scrollY > (typeof window !== 'undefined' ? window.innerHeight * 1.2 : 950);
 
   const navLinks = [
     { label: 'Home', route: 'home', sectionId: null },
-    { label: 'Signature Projects', route: 'projects', sectionId: 'projects-grid' },
-    { label: 'Philosophy', route: 'about', sectionId: 'philosophy-section' },
-    { label: 'Landowners', route: 'home', sectionId: 'landowners-section' },
-    { label: 'Floor Plans', route: 'home', sectionId: 'virtual-floor-plan' },
+    { label: 'About', route: 'about', sectionId: null },
+    { label: 'Projects', route: 'projects', sectionId: 'projects-grid' },
     { label: 'Contact', route: 'contact', sectionId: 'contact-section' },
   ];
 
@@ -32,10 +35,14 @@ export default function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out transform ${
+        isHeaderHidden
+          ? '-translate-y-full opacity-0 pointer-events-none'
+          : 'translate-y-0 opacity-100 pointer-events-auto'
+      } ${
         isDarkHero
           ? isCompact
-            ? 'bg-stone-950/80 backdrop-blur-md border-b border-white/10 py-3.5 shadow-xl text-white'
+            ? 'bg-stone-950/85 backdrop-blur-md border-b border-white/10 py-3.5 shadow-xl text-white'
             : 'bg-stone-950/40 backdrop-blur-xs border-b border-white/10 py-5 text-white'
           : isCompact 
             ? 'bg-white/95 backdrop-blur-md shadow-xs border-b border-stone-200/90 py-3.5 text-stone-900' 
@@ -105,7 +112,7 @@ export default function Navbar() {
                 : 'bg-stone-900 hover:bg-[#B48C57] text-white'
             }`}
           >
-            Schedule Viewing
+            Book Now
           </button>
         </div>
 
@@ -155,7 +162,7 @@ export default function Navbar() {
               }}
               className="w-full py-3 bg-stone-900 hover:bg-[#B48C57] text-white text-xs font-semibold tracking-wider uppercase rounded-lg text-center"
             >
-              Schedule Private Viewing
+              Book Now
             </button>
             <div className="text-center text-xs text-stone-500">
               Hotline: <a href={`tel:${companyInfo.hotline.replace(/\s+/g, '')}`} className="font-semibold text-stone-800">{companyInfo.hotline}</a>
