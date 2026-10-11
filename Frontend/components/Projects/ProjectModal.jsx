@@ -22,7 +22,7 @@ export default function ProjectModal({ project, onClose }) {
         <div className="p-6 border-b border-stone-200 flex items-start justify-between bg-stone-50/50">
           <div className="space-y-1">
             <div className="flex items-center gap-2 text-xs font-semibold text-[#B48C57] tracking-wider uppercase">
-              <span>{project.kicker}</span>
+              <span>{project.kicker || project.category || 'Luxury Residence'}</span>
               <span aria-hidden="true">·</span>
               <span>{project.location}</span>
             </div>
@@ -81,44 +81,46 @@ export default function ProjectModal({ project, onClose }) {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 p-5 bg-stone-50 rounded-xl border border-stone-200/80">
                 <div>
                   <div className="text-xs text-stone-500">Unit Dimensions</div>
-                  <div className="text-sm font-semibold text-stone-900">{project.areaSqft}</div>
+                  <div className="text-sm font-semibold text-stone-900">{project.areaSqft || 'Custom Suite'}</div>
                 </div>
                 <div>
                   <div className="text-xs text-stone-500">Accommodation</div>
-                  <div className="text-sm font-semibold text-stone-900">{project.bedrooms}</div>
+                  <div className="text-sm font-semibold text-stone-900">{project.bedrooms || 'Bespoke Layout'}</div>
                 </div>
                 <div>
                   <div className="text-xs text-stone-500">Total Levels</div>
-                  <div className="text-sm font-semibold text-stone-900">{project.floors} Stories</div>
+                  <div className="text-sm font-semibold text-stone-900">{project.floors ? `${project.floors} Stories` : project.levels || 'Multi-Level'}</div>
                 </div>
                 <div>
                   <div className="text-xs text-stone-500">Handover Schedule</div>
-                  <div className="text-sm font-semibold text-stone-900">{project.handoverDate}</div>
+                  <div className="text-sm font-semibold text-stone-900">{project.handoverDate || project.status || 'Inquire'}</div>
                 </div>
                 <div>
                   <div className="text-xs text-stone-500">RAJUK Approval Code</div>
-                  <div className="text-sm font-semibold text-stone-900 font-mono text-xs">{project.rajukApproval}</div>
+                  <div className="text-sm font-semibold text-stone-900 font-mono text-xs">{project.rajukApproval || 'RAJUK Compliant'}</div>
                 </div>
                 <div>
                   <div className="text-xs text-stone-500">Investment Range</div>
-                  <div className="text-sm font-semibold text-[#B48C57]">{project.priceRange}</div>
+                  <div className="text-sm font-semibold text-[#B48C57]">{project.priceRange || 'Price on Request'}</div>
                 </div>
               </div>
 
               {/* Architectural Engineering Highlights */}
-              <div>
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-500 mb-3">
-                  Engineering & Structural Mastery
-                </h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm text-stone-700">
-                  {project.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#B48C57] shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              {project.features && project.features.length > 0 && (
+                <div>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-500 mb-3">
+                    Engineering & Structural Mastery
+                  </h4>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm text-stone-700">
+                    {project.features.map((feat, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-[#B48C57] shrink-0 mt-0.5" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           )}
 
@@ -129,47 +131,59 @@ export default function ProjectModal({ project, onClose }) {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {project.floorPlans.map((fp, idx) => (
-                  <div key={idx} className="p-5 border border-stone-200 rounded-xl bg-stone-50/50 space-y-3">
-                    <div className="flex items-center justify-between">
-                      <h4 className="font-serif text-lg font-bold text-stone-900">{fp.title}</h4>
-                      <span className="text-xs font-semibold text-[#B48C57] bg-white px-2.5 py-1 rounded border border-stone-200">
-                        {fp.size}
-                      </span>
-                    </div>
-                    {fp.beds && (
-                      <div className="text-xs font-medium text-stone-600">{fp.beds}</div>
-                    )}
-                    <p className="text-xs md:text-sm text-stone-600 leading-relaxed">
-                      {fp.specs}
-                    </p>
-                    {/* Architectural Floor Plan schematic diagram */}
-                    <div className="w-full aspect-[16/9] bg-white border border-stone-200 rounded-lg flex items-center justify-center p-4">
-                      <div className="text-center space-y-1">
-                        <Compass className="w-6 h-6 text-[#B48C57] mx-auto opacity-70" />
-                        <div className="text-[11px] font-mono text-stone-500 uppercase">CAD SCHEMATIC LAYOUT · LEVEL {idx + 3}</div>
-                        <div className="text-xs text-stone-700 font-semibold">{fp.title}</div>
+                {(project.floorPlans || []).length > 0 ? (
+                  project.floorPlans.map((fp, idx) => (
+                    <div key={idx} className="p-5 border border-stone-200 rounded-xl bg-stone-50/50 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-serif text-lg font-bold text-stone-900">{fp.title}</h4>
+                        <span className="text-xs font-semibold text-[#B48C57] bg-white px-2.5 py-1 rounded border border-stone-200">
+                          {fp.size}
+                        </span>
+                      </div>
+                      {fp.beds && (
+                        <div className="text-xs font-medium text-stone-600">{fp.beds}</div>
+                      )}
+                      <p className="text-xs md:text-sm text-stone-600 leading-relaxed">
+                        {fp.specs}
+                      </p>
+                      {/* Architectural Floor Plan schematic diagram */}
+                      <div className="w-full aspect-[16/9] bg-white border border-stone-200 rounded-lg flex items-center justify-center p-4">
+                        <div className="text-center space-y-1">
+                          <Compass className="w-6 h-6 text-[#B48C57] mx-auto opacity-70" />
+                          <div className="text-[11px] font-mono text-stone-500 uppercase">CAD SCHEMATIC LAYOUT · LEVEL {idx + 3}</div>
+                          <div className="text-xs text-stone-700 font-semibold">{fp.title}</div>
+                        </div>
                       </div>
                     </div>
+                  ))
+                ) : (
+                  <div className="col-span-2 text-center py-8 text-stone-500 text-sm">
+                    Detailed floor plan layouts and CAD schematics available upon scheduling a viewing.
                   </div>
-                ))}
+                )}
               </div>
             </div>
           )}
 
           {activeTab === 'amenities' && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {project.amenities.map((am, idx) => (
-                <div key={idx} className="p-4 border border-stone-200/90 rounded-xl bg-stone-50 space-y-1">
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-[#B48C57]" />
-                    <h4 className="text-sm font-semibold text-stone-900">{am.name}</h4>
+              {(project.amenities || []).length > 0 ? (
+                project.amenities.map((am, idx) => (
+                  <div key={idx} className="p-4 border border-stone-200/90 rounded-xl bg-stone-50 space-y-1">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-[#B48C57]" />
+                      <h4 className="text-sm font-semibold text-stone-900">{am.name}</h4>
+                    </div>
+                    <p className="text-xs text-stone-600 pl-6 leading-relaxed">
+                      {am.desc}
+                    </p>
                   </div>
-                  <p className="text-xs text-stone-600 pl-6 leading-relaxed">
-                    {am.desc}
-                  </p>
+                ))
+              ) : (
+                <div className="col-span-2 text-center py-8 text-stone-500 text-sm">
+                  Comprehensive amenities catalog available upon inquiry.
                 </div>
-              ))}
+              )}
             </div>
           )}
         </div>
