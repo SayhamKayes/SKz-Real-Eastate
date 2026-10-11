@@ -5,6 +5,8 @@ import ProjectModal from '../components/Projects/ProjectModal.jsx';
 import ScheduleViewingForm from '../components/Inquiry/ScheduleViewingForm.jsx';
 import { useRealEstate } from '../Context/RealEstateContext.jsx';
 import { CheckCircle2 } from 'lucide-react';
+import BackToTop from '../components/Widgets/BackToTop.jsx';
+import WhatsAppWidget from '../components/Widgets/WhatsAppWidget.jsx';
 
 export default function MainLayout({ children }) {
   const {
@@ -17,7 +19,7 @@ export default function MainLayout({ children }) {
   } = useRealEstate();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FBFBF9] text-stone-900 selection:bg-[#B48C57] selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#FBFBF9] text-stone-900 selection:bg-[#B48C57] selection:text-white relative">
       {/* Top Navbar */}
       <Navbar />
 
@@ -28,6 +30,10 @@ export default function MainLayout({ children }) {
 
       {/* Footer */}
       <Footer />
+
+      {/* Global Interactive Widgets */}
+      <BackToTop />
+      <WhatsAppWidget />
 
       {/* Global Project Details Modal */}
       {selectedProject && (
@@ -46,7 +52,7 @@ export default function MainLayout({ children }) {
 
       {/* Toast Notification Container */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-stone-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-stone-700/60 flex items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-200">
+        <div className="fixed bottom-6 right-20 z-50 bg-stone-900 text-white px-5 py-3.5 rounded-xl shadow-2xl border border-stone-700/60 flex items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-200">
           <CheckCircle2 className="w-5 h-5 text-[#B48C57] shrink-0" />
           <span className="text-xs md:text-sm font-medium">{toastMessage}</span>
         </div>
