@@ -8,7 +8,7 @@ export default function WhatsAppWidget({ phoneNumber = '8801713040000', customMe
   const rawNumber = companyInfo?.directSales || companyInfo?.hotline || phoneNumber;
   const sanitizedNumber = rawNumber.replace(/[^0-9]/g, '');
 
-  const defaultMsg = customMessage || `Hello ${companyInfo?.shortName || 'Navana Real Estate'}, I would like to inquire about your luxury residential and commercial projects.`;
+  const defaultMsg = customMessage || `Hello ${companyInfo?.shortName || 'SKz Real Estate'}, I would like to inquire about your luxury residential and commercial projects.`;
   const whatsappUrl = `https://wa.me/${sanitizedNumber}?text=${encodeURIComponent(defaultMsg)}`;
 
   return (

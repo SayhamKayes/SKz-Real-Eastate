@@ -64,7 +64,7 @@ export default function HeroSection() {
               Welcome to
             </span>
             <h2 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white drop-shadow-2xl">
-              NAVANA <span className="font-light italic text-[#D4AF37]">REAL ESTATE</span>
+              SKz <span className="font-bold italic text-[#D4AF37]">REAL ESTATE</span>
             </h2>
           </div>
         )}

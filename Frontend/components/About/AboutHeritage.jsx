@@ -20,7 +20,7 @@ export default function AboutHeritage() {
             Pioneering Architectural Landmarks Across Dhaka for Nearly Three Decades
           </h2>
           <p className="text-base md:text-lg text-stone-600 leading-relaxed">
-            Founded with the singular purpose of elevating Bangladesh’s urban skyline, Navana Real Estate Ltd. 
+            Founded with the singular purpose of elevating Bangladesh’s urban skyline, SKz Real Estate Ltd. 
             unites international Scandinavian architectural restraint with unyielding structural integrity. 
             We do not simply build residences; we sculpt timeless landmarks that endure for generations.
           </p>
@@ -35,7 +35,7 @@ export default function AboutHeritage() {
                 The Standard of Absolute Integrity
               </h3>
               <p className="text-sm md:text-base text-stone-600 leading-relaxed">
-                In an industry where delays and compromises are too frequent, Navana Real Estate operates under 
+                In an industry where delays and compromises are too frequent, SKz Real Estate operates under 
                 a solemn pledge: 100% on-time handover, unencumbered legal titles, and structural safety engineered 
                 far beyond local regulatory mandates.
               </p>
@@ -68,7 +68,7 @@ export default function AboutHeritage() {
 
             <div className="relative space-y-4">
               <div className="text-xs font-semibold text-[#B48C57] tracking-widest uppercase">
-                THE NAVANA PROMISE
+                THE SKz PROMISE
               </div>
               <h3 className="font-serif text-3xl font-bold tracking-tight">
                 "We build with the assumption that nature is unpredictable, but our engineering is not."

@@ -9,7 +9,7 @@ export default function ScheduleViewingForm({ isOpen, onClose, initialProject = 
     name: '',
     email: '',
     phone: '',
-    project_interest: initialProject || 'Navana Platinum Square, Gulshan 2',
+    project_interest: initialProject || 'SKz Platinum Square, Gulshan 2',
     location_preference: 'Gulshan 2',
     budget_range: 'BDT 10 Cr – 15 Cr',
     preferred_viewing_date: '',
@@ -128,12 +128,12 @@ export default function ScheduleViewingForm({ isOpen, onClose, initialProject = 
                   onChange={(e) => setFormData({ ...formData, project_interest: e.target.value })}
                   className="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-200 rounded-lg text-sm focus:outline-none focus:border-[#B48C57]"
                 >
-                  <option value="Navana Platinum Square, Gulshan 2">Navana Platinum Square (Gulshan 2)</option>
-                  <option value="Navana Imperium, Tejgaon">Navana Imperium (Tejgaon Commercial)</option>
-                  <option value="Navana Pristine Heights, Banani">Navana Pristine Heights (Banani)</option>
-                  <option value="Navana Green Terraces, Dhanmondi">Navana Green Terraces (Dhanmondi)</option>
-                  <option value="Navana The Horizon, Baridhara">Navana The Horizon (Baridhara Diplomatic)</option>
-                  <option value="Navana Vantage Tower, Gulshan Ave">Navana Vantage Tower (Gulshan Avenue)</option>
+                  <option value="SKz Platinum Square, Gulshan 2">SKz Platinum Square (Gulshan 2)</option>
+                  <option value="SKz Imperium, Tejgaon">SKz Imperium (Tejgaon Commercial)</option>
+                  <option value="SKz Pristine Heights, Banani">SKz Pristine Heights (Banani)</option>
+                  <option value="SKz Green Terraces, Dhanmondi">SKz Green Terraces (Dhanmondi)</option>
+                  <option value="SKz The Horizon, Baridhara">SKz The Horizon (Baridhara Diplomatic)</option>
+                  <option value="SKz Vantage Tower, Gulshan Ave">SKz Vantage Tower (Gulshan Avenue)</option>
                   <option value="General Luxury Portfolio Consultation">General Luxury Portfolio Consultation</option>
                 </select>
               </div>

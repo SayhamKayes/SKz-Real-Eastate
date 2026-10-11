@@ -62,7 +62,7 @@ export default function Navbar() {
               ? 'text-white group-hover:text-[#D4AF37]' 
               : 'text-stone-900 group-hover:text-[#B48C57]'
           }`}>
-            NAVANA <span className={`font-light tracking-widest ${isDarkHero ? 'text-[#D4AF37]' : 'text-[#B48C57]'}`}>REAL ESTATE</span>
+            SKz <span className={`font-light tracking-widest ${isDarkHero ? 'text-[#D4AF37]' : 'text-[#B48C57]'}`}>REAL ESTATE</span>
           </div>
         </button>
 

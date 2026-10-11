@@ -127,7 +127,7 @@ export default function ProjectModal({ project, onClose }) {
           {activeTab === 'floorPlans' && (
             <div className="space-y-6">
               <p className="text-xs md:text-sm text-stone-600">
-                Every Navana residence offers expansive floor plates with zero dark corridors, maximizing cross-ventilation and natural daylight.
+                Every SKz residence offers expansive floor plates with zero dark corridors, maximizing cross-ventilation and natural daylight.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

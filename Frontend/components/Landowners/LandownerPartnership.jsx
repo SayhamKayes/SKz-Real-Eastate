@@ -199,7 +199,7 @@ export default function LandownerPartnership() {
                 Submit Your Land for Evaluation
               </h3>
               <p className="text-xs text-stone-500">
-                Strict confidential review directly handled by Navana’s Board of Directors.
+                Strict confidential review directly handled by SKz’s Board of Directors.
               </p>
             </div>
 
